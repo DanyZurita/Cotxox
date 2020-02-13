@@ -9,5 +9,4 @@ public class Conductor {
     private String matricula = "";
     private float valioracionMedia = 0;
     private int valoracion;
-    private ArrayList<valoracion> valoraciones = new ArrayList<valoracion>;
 }
