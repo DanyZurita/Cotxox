@@ -47,6 +47,14 @@ public class Carrera {
         return tarifa.getCosteTotalEsperado(this);
     }
     
+    public Conductor getConductor() {
+        return this.conductor;
+    }
+    
+    public void setConductor(Conductor conductor) {
+        this.conductor = conductor;
+    }
+    
     public void setOrigen(String origenInput){
         this.origen = origenInput;
     }
