@@ -8,9 +8,10 @@ public class Conductor {
     private String nombre = "";
     private String modelo = "";
     private String matricula = "";
-    private float valioracionMedia = 0;
+    private double valoracionMedia = 0.0;
     private byte valoracion;
     private boolean libre = true;
+    private ArrayList<Byte> valoraciones = new ArrayList<>();
     
     
     public Conductor (String nombre) {
@@ -42,20 +43,16 @@ public class Conductor {
         this.matricula = matricula;
     }
 
-    public float getValioracionMedia() {
-        return valioracionMedia;
+    public double getValoracionMedia() {
+        return valoracionMedia;
     }
 
-    public void setValioracionMedia(float valioracionMedia) {
-        this.valioracionMedia = valioracionMedia;
+    public void setValoracionMedia(float valoracionMedia) {
+        this.valoracionMedia = valoracionMedia;
     }
 
-    public byte getValoracion() {
-        return valoracion;
-    }
-
-    public void setValoracion(byte valoracion) {
-        this.valoracion = valoracion;
+    public double getValoracion() {
+        return valoracionMedia;
     }
 
     public boolean isLibre() {
@@ -66,5 +63,22 @@ public class Conductor {
         this.libre = libre;
     }
     
-   
+   public int getNumeroValoraciones() {
+        return this.valoraciones.size();
+    }
+
+    public void setValoracion(byte valoracion) {
+        this.valoraciones.add(valoracion);
+        this.calcularValoracionMedia();
+    }
+
+    private double calcularValoracionMedia() {
+        int totalValoracionMedia = 0;
+        for (byte valor : this.valoraciones) {
+                totalValoracionMedia += valor;
+        }
+        
+        this.valoracionMedia = (double) totalValoracionMedia / getNumeroValoraciones();
+        return this.valoracionMedia;
+    }
 }
