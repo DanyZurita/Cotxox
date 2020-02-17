@@ -9,11 +9,13 @@ public class Conductor {
     private String modelo = "";
     private String matricula = "";
     private float valioracionMedia = 0;
-    private int valoracion;
+    private byte valoracion;
     private boolean libre = true;
     
     
-    public Conductor () {}
+    public Conductor (String nombre) {
+        this.nombre = nombre;
+    }
     
     
     public String getNombre() {
@@ -48,11 +50,11 @@ public class Conductor {
         this.valioracionMedia = valioracionMedia;
     }
 
-    public int getValoracion() {
+    public byte getValoracion() {
         return valoracion;
     }
 
-    public void setValoracion(int valoracion) {
+    public void setValoracion(byte valoracion) {
         this.valoracion = valoracion;
     }
 

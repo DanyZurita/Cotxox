@@ -1,5 +1,7 @@
 package edu.elsmancs.Cotxox;
 
+import java.util.ArrayList;
+
 
 public class Cotxox {
 
@@ -85,7 +87,7 @@ public class Cotxox {
 		System.out.println("Stars: " + carrera.getConductor().getValoracion());
 		System.out.println("From: " + carrera.getOrigen());
 		System.out.println("To: " + carrera.getDestino());
-		boolean ocupado = carrera.getConductor().isOcupado();
+		boolean ocupado = carrera.getConductor().isLibre();
 		if (ocupado) {
 			System.out.println("Disponible para ti");
 		} else {
@@ -104,7 +106,7 @@ public class Cotxox {
 		System.out.println("TIP: " + carrera.getPropina());
 		System.out.println("Visa: " + carrera.getTarjetaCredito());
 		System.out.println("Total: " + carrera.getCosteTotal());
-		System.out.println("Ocupado?: " + carrera.getConductor().isOcupado());
+		System.out.println("Ocupado?: " + carrera.getConductor().isLibre());
 
 		System.out.println("\n#####" + "\t Rate your driver: \t" + "#####\n");
 

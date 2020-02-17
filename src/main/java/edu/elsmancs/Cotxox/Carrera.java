@@ -71,5 +71,7 @@ public class Carrera {
         this.tiempoEsperado = tiempoEsperadoInput;
     }
     
-    
+    public void asignarConductor(PoolConductores conductores) {
+            setConductor(conductores.asignarConductor());
+    }
 }
