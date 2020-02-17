@@ -9,7 +9,8 @@ package edu.elsmancs.Cotxox;
 public class Carrera {
     private int tiempoEsperado;
     private int tiempoCarrera = 0;
-    private float costeTotal = 0;
+    private double costeTotal = 0.0;
+    private int propina = 0;
     private Conductor conductor;
     private final String tarjeta;
     private String origen;
@@ -73,5 +74,25 @@ public class Carrera {
     
     public void asignarConductor(PoolConductores conductores) {
             setConductor(conductores.asignarConductor());
+    }
+    
+    public void realizarPago(double pago) {
+        this.costeTotal = pago;
+    }
+
+    public double getCosteTotal() {
+        return this.costeTotal;
+    }
+
+    public void recibirPropina(int propina) {
+        this.propina = propina;
+    }
+
+    public int getPropina() {
+        return this.propina;
+    }
+    
+    public void liberarConductor() {
+        getConductor().setLibre(true);
     }
 }
